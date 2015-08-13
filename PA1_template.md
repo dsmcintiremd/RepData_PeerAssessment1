@@ -1,4 +1,9 @@
-# Reproducible Research: Peer Assessment 1
+---
+title: "Reproducible Research: Peer Assessment 1"
+output: 
+  html_document:
+    keep_md: true
+---
 
 # Introduction
 
@@ -47,7 +52,7 @@ g <- ggplot (summary_by_date, aes(totalsteps))
 g + geom_histogram(binwidth=1500) + labs(x="Total Steps per day", y="Frequency", title="Total Steps per day") + geom_vline(aes(xintercept=median(totalsteps, na.rm=TRUE)), color="red", linetype="dashed", size=1)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-4-1.png) 
+![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png) 
 
 The following shows the calculation of the mean and median of the total number of steps taken per day. 
 
@@ -74,7 +79,7 @@ g <- ggplot (summary_by_interval, aes(x=interval,y=meansteps))
 g + geom_line() + labs(x="Interval", y="Average Steps", title="Average Steps by 5-Minute Interval")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-7-1.png) 
+![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7-1.png) 
 
 The 5-minute interval that contains the maximum number of steps is listed below:
 
@@ -122,7 +127,7 @@ g2 <- ggplot (summary_by_date_imputed, aes(totalsteps))
 g2 + geom_histogram(binwidth=1500) + labs(x="Total Steps per day", y="Frequency", title="Total Steps per day - NA Values Replaced") + geom_vline(aes(xintercept=median(totalsteps, na.rm=TRUE)), color="red", linetype="dashed", size=1) 
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-11-1.png) 
+![plot of chunk unnamed-chunk-11](figure/unnamed-chunk-11-1.png) 
 
 The graph more closely follows a normal distribution. 
 
@@ -154,7 +159,7 @@ g <- ggplot (summary_by_interval_weekdayend, aes(x=interval,y=meansteps))
 g + geom_line() + facet_grid(weekdayend ~ .) + labs(x="Interval", y="Average Steps", title="Average Steps by 5-Minute Interval: Weekday and Weekend")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-14-1.png) 
+![plot of chunk unnamed-chunk-14](figure/unnamed-chunk-14-1.png) 
 
 # Conclusions
 This report summarized activity data across multiple dimensions, analyzed and reported the findings. 
